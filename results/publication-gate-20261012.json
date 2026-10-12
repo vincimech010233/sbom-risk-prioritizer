@@ -1,0 +1,199 @@
+{
+  "classification": "VERIFIED",
+  "timestamp": "2026-10-12T11:48:09.205149+00:00",
+  "initial_clean": true,
+  "checks": [
+    {
+      "command": "cargo fmt --check",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": "cargo clippy --offline --locked -- -D warnings",
+      "exit": 0,
+      "output": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s\n"
+    },
+    {
+      "command": "cargo test --offline --locked",
+      "exit": 0,
+      "output": "\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 5 tests\ntest no_findings_not_safe ... ok\ntest reject_unsupported ... ok\ntest queue ... ok\ntest deterministic_permutations ... ok\ntest rejection ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s\n     Running unittests src/lib.rs (target/debug/deps/sbom_risk_prioritizer-3389750c2c2d5aee)\n     Running unittests src/main.rs (target/debug/deps/sbom_risk_prioritizer-783028acf4d88bc1)\n     Running tests/priority.rs (target/debug/deps/priority-8025e554eff69ebc)\n   Doc-tests sbom_risk_prioritizer\n"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "exit": 0,
+      "output": "test_expected_queue (test_report.ReportTests.test_expected_queue) ... ok\ntest_html_escape (test_report.ReportTests.test_html_escape) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "command": "[workspace]/projects/portfolio-delivery-20261012/.venv/bin/ruff check src tests tools --select E4,E7,E9,F",
+      "exit": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": "[workspace]/projects/portfolio-delivery-20261012/.venv/bin/ruff format --check src tests tools",
+      "exit": 0,
+      "output": "3 files already formatted\n"
+    }
+  ],
+  "history_scan": {
+    "unique_blobs": 45,
+    "flags": [],
+    "classification": "OBSERVED",
+    "scope": "Conservative credential/private-host-path patterns; not exhaustive secret detection; all reachable git blobs"
+  },
+  "license": {
+    "mit_present": true,
+    "third_party_metadata": [
+      "LICENSE",
+      "results/licenses.json"
+    ],
+    "limitations": "Registry metadata reviewed; exhaustive legal/supply-chain review NOT_VERIFIED. Project license does not relicense third-party dependencies."
+  },
+  "dependency_audit": {
+    "classification": "OBSERVED",
+    "timestamp": "2026-10-12T11:48:09.205149+00:00",
+    "queries": [
+      {
+        "package": {
+          "name": "itoa",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.18"
+      },
+      {
+        "package": {
+          "name": "memchr",
+          "ecosystem": "crates.io"
+        },
+        "version": "2.8.3"
+      },
+      {
+        "package": {
+          "name": "proc-macro2",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.107"
+      },
+      {
+        "package": {
+          "name": "quote",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.47"
+      },
+      {
+        "package": {
+          "name": "serde",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.228"
+      },
+      {
+        "package": {
+          "name": "serde_core",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.228"
+      },
+      {
+        "package": {
+          "name": "serde_derive",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.228"
+      },
+      {
+        "package": {
+          "name": "serde_json",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.149"
+      },
+      {
+        "package": {
+          "name": "syn",
+          "ecosystem": "crates.io"
+        },
+        "version": "2.0.119"
+      },
+      {
+        "package": {
+          "name": "unicode-ident",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.26"
+      },
+      {
+        "package": {
+          "name": "zmij",
+          "ecosystem": "crates.io"
+        },
+        "version": "1.0.23"
+      },
+      {
+        "package": {
+          "name": "ruff",
+          "ecosystem": "PyPI"
+        },
+        "version": "0.17.0"
+      }
+    ],
+    "response": {
+      "results": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    "advisories": 0,
+    "scope": "OSV version lookup; no vulnerability-free or full supply-chain/legal assurance"
+  },
+  "tests_pass": true,
+  "working_tree_clean": true,
+  "reviewed_commit": "4cd9749486183f39b095a674283b8ec20fb0c664",
+  "phase": "Prepublication verification of implementation; documentation/evidence additions follow in the publication commit",
+  "example_reproduction": {
+    "classification": "VERIFIED",
+    "checks": [
+      {
+        "command": [
+          "[workspace]/projects/sbom-risk-prioritizer/target/debug/sbom-risk-prioritizer",
+          "--synthetic",
+          "examples/sbom.json",
+          "examples/findings.json",
+          "[workspace]/projects/portfolio-publication-20261012/examples/sbom-risk-prioritizer/report.json"
+        ],
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "python3",
+          "src/report.py",
+          "[workspace]/projects/portfolio-publication-20261012/examples/sbom-risk-prioritizer/report.json",
+          "[workspace]/projects/portfolio-publication-20261012/examples/sbom-risk-prioritizer/report.md"
+        ],
+        "exit": 0,
+        "output": ""
+      }
+    ],
+    "semantic_equal": true,
+    "comparison_scope": "Exact JSON semantic equality with committed result",
+    "output": "examples/sbom-risk-prioritizer/report.json"
+  },
+  "authorship_privacy": {
+    "classification": "VERIFIED",
+    "original_git_author_identities_already_in_public_profile_history": true,
+    "address_values_retained_in_this_record": false
+  },
+  "hosted_ci": "NOT_VERIFIED at this prepublication gate; use exact commit GitHub Actions run after push",
+  "known_limitations_retained": true
+}

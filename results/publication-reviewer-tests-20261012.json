@@ -1,0 +1,30 @@
+[
+  {
+    "command": "cargo test --offline --locked --jobs 2",
+    "exit_status": 0,
+    "elapsed_seconds": 0.088,
+    "classification": "OBSERVED",
+    "output": "\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 5 tests\ntest reject_unsupported ... ok\ntest no_findings_not_safe ... ok\ntest queue ... ok\ntest deterministic_permutations ... ok\ntest rejection ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s\n     Running unittests src/lib.rs (target/debug/deps/sbom_risk_prioritizer-3389750c2c2d5aee)\n     Running unittests src/main.rs (target/debug/deps/sbom_risk_prioritizer-783028acf4d88bc1)\n     Running tests/priority.rs (target/debug/deps/priority-8025e554eff69ebc)\n   Doc-tests sbom_risk_prioritizer\nREVIEW_OBSERVED_PEAK_RSS_KIB=77672\n"
+  },
+  {
+    "command": "cargo fmt --check",
+    "exit_status": 0,
+    "elapsed_seconds": 0.064,
+    "classification": "OBSERVED",
+    "output": "REVIEW_OBSERVED_PEAK_RSS_KIB=39164\n"
+  },
+  {
+    "command": "cargo clippy --offline --locked -- -D warnings",
+    "exit_status": 0,
+    "elapsed_seconds": 0.111,
+    "classification": "OBSERVED",
+    "output": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.06s\nREVIEW_OBSERVED_PEAK_RSS_KIB=36748\n"
+  },
+  {
+    "command": "python3 -m unittest discover -s tests -v",
+    "exit_status": 0,
+    "elapsed_seconds": 0.068,
+    "classification": "OBSERVED",
+    "output": "test_expected_queue (test_report.ReportTests.test_expected_queue) ... ok\ntest_html_escape (test_report.ReportTests.test_html_escape) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\nREVIEW_OBSERVED_PEAK_RSS_KIB=15704\n"
+  }
+]
