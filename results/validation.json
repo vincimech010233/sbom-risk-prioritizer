@@ -1,0 +1,153 @@
+[
+  {
+    "timestamp": "2026-10-12T10:38:39.821645+00:00",
+    "checks": [
+      {
+        "command": "cargo fmt",
+        "exit_status": 0,
+        "seconds": 0.106,
+        "classification": "OBSERVED",
+        "output": "OBSERVED peak_RSS_KiB=39388 elapsed_seconds=0.10\n"
+      },
+      {
+        "command": "cargo test --offline",
+        "exit_status": 0,
+        "seconds": 10.888,
+        "classification": "OBSERVED",
+        "output": "     Locking 11 packages to latest Rust 1.98.1 compatible versions\n      Adding serde v1.0.228 (available: v1.0.229)\n      Adding serde_core v1.0.228 (available: v1.0.229)\n      Adding serde_derive v1.0.228 (available: v1.0.229)\n      Adding serde_json v1.0.149 (available: v1.0.151)\n   Compiling proc-macro2 v1.0.107\n   Compiling unicode-ident v1.0.26\n   Compiling quote v1.0.47\n   Compiling serde_core v1.0.228\n   Compiling zmij v1.0.23\n   Compiling syn v2.0.119\n   Compiling serde v1.0.228\n   Compiling serde_json v1.0.149\n   Compiling serde_derive v1.0.228\n   Compiling itoa v1.0.18\n   Compiling memchr v2.8.3\n   Compiling sbom-risk-prioritizer v0.1.0 ([workspace]/projects/sbom-risk-prioritizer)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.74s\n     Running unittests src/lib.rs (target/debug/deps/sbom_risk_prioritizer-3389750c2c2d5aee)\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n     Running unittests src/main.rs (target/debug/deps/sbom_risk_prioritizer-783028acf4d88bc1)\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n     Running tests/priority.rs (target/debug/deps/priority-8025e554eff69ebc)\n\nrunning 5 tests\ntest no_findings_not_safe ... ok\ntest reject_unsupported ... ok\ntest queue ... ok\ntest deterministic_permutations ... ok\ntest rejection ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n   Doc-tests sbom_risk_prioritizer\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\nOBSERVED peak_RSS_KiB=272372 elapsed_seconds=10.88\n"
+      },
+      {
+        "command": "cargo clippy --offline -- -D warnings",
+        "exit_status": 0,
+        "seconds": 3.763,
+        "classification": "OBSERVED",
+        "output": "    Checking serde_core v1.0.228\n    Checking zmij v1.0.23\n    Checking itoa v1.0.18\n    Checking memchr v2.8.3\n    Checking serde v1.0.228\n    Checking serde_json v1.0.149\n    Checking sbom-risk-prioritizer v0.1.0 ([workspace]/projects/sbom-risk-prioritizer)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.70s\nOBSERVED peak_RSS_KiB=248596 elapsed_seconds=3.76\n"
+      },
+      {
+        "command": "cargo run --offline -- --synthetic examples/sbom.json examples/findings.json results/report.json",
+        "exit_status": 0,
+        "seconds": 0.09,
+        "classification": "OBSERVED",
+        "output": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.07s\n     Running `target/debug/sbom-risk-prioritizer --synthetic examples/sbom.json examples/findings.json results/report.json`\nOBSERVED peak_RSS_KiB=34300 elapsed_seconds=0.08\n"
+      },
+      {
+        "command": "python3 src/report.py results/report.json results/report.md",
+        "exit_status": 0,
+        "seconds": 0.05,
+        "classification": "OBSERVED",
+        "output": "OBSERVED peak_RSS_KiB=12224 elapsed_seconds=0.04\n"
+      },
+      {
+        "command": "python3 -m unittest discover -s tests -v",
+        "exit_status": 0,
+        "seconds": 0.128,
+        "classification": "OBSERVED",
+        "output": "test_expected_queue (test_report.ReportTests.test_expected_queue) ... ok\ntest_html_escape (test_report.ReportTests.test_html_escape) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\nOBSERVED peak_RSS_KiB=15968 elapsed_seconds=0.12\n"
+      },
+      {
+        "command": "cargo fmt --check",
+        "exit_status": 0,
+        "seconds": 0.082,
+        "classification": "OBSERVED",
+        "output": "OBSERVED peak_RSS_KiB=39120 elapsed_seconds=0.08\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-10-12T10:39:53.069499+00:00",
+    "checks": [
+      {
+        "command": "python3 src/report.py results/report.json results/report.md",
+        "exit_status": 0,
+        "seconds": 0.04,
+        "classification": "OBSERVED",
+        "output": "OBSERVED peak_RSS_KiB=12216 elapsed_seconds=0.03\n"
+      },
+      {
+        "command": "python3 -m unittest discover -s tests -v",
+        "exit_status": 0,
+        "seconds": 0.085,
+        "classification": "OBSERVED",
+        "output": "test_expected_queue (test_report.ReportTests.test_expected_queue) ... ok\ntest_html_escape (test_report.ReportTests.test_html_escape) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\nOBSERVED peak_RSS_KiB=15988 elapsed_seconds=0.08\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-10-12T11:13:34.684777+00:00",
+    "checks": [
+      {
+        "command": "../portfolio-delivery-20261012/.venv/bin/ruff check src tests tools --select E4,F --fix --output-format concise",
+        "exit_status": 0,
+        "seconds": 0.013,
+        "classification": "OBSERVED",
+        "output": "Found 3 errors (3 fixed, 0 remaining).\nOBSERVED peak_RSS_KiB=19448 elapsed_seconds=0.01\n"
+      },
+      {
+        "command": "../portfolio-delivery-20261012/.venv/bin/ruff format src tests tools",
+        "exit_status": 0,
+        "seconds": 0.013,
+        "classification": "OBSERVED",
+        "output": "3 files reformatted\nOBSERVED peak_RSS_KiB=17820 elapsed_seconds=0.01\n"
+      },
+      {
+        "command": "../portfolio-delivery-20261012/.venv/bin/ruff check src tests tools --select E4,E7,E9,F",
+        "exit_status": 0,
+        "seconds": 0.012,
+        "classification": "OBSERVED",
+        "output": "All checks passed!\nOBSERVED peak_RSS_KiB=18812 elapsed_seconds=0.01\n"
+      },
+      {
+        "command": "../portfolio-delivery-20261012/.venv/bin/ruff format --check src tests tools",
+        "exit_status": 0,
+        "seconds": 0.011,
+        "classification": "OBSERVED",
+        "output": "3 files already formatted\nOBSERVED peak_RSS_KiB=16176 elapsed_seconds=0.00\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-10-12T11:13:35.169525+00:00",
+    "checks": [
+      {
+        "command": "cargo fmt --check",
+        "exit_status": 0,
+        "seconds": 0.072,
+        "classification": "OBSERVED",
+        "output": "OBSERVED peak_RSS_KiB=39172 elapsed_seconds=0.07\n"
+      },
+      {
+        "command": "cargo clippy --offline --locked -- -D warnings",
+        "exit_status": 0,
+        "seconds": 0.12,
+        "classification": "OBSERVED",
+        "output": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.07s\nOBSERVED peak_RSS_KiB=28684 elapsed_seconds=0.11\n"
+      },
+      {
+        "command": "cargo test --offline --locked",
+        "exit_status": 0,
+        "seconds": 0.193,
+        "classification": "OBSERVED",
+        "output": "    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s\n     Running unittests src/lib.rs (target/debug/deps/sbom_risk_prioritizer-3389750c2c2d5aee)\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n     Running unittests src/main.rs (target/debug/deps/sbom_risk_prioritizer-783028acf4d88bc1)\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n     Running tests/priority.rs (target/debug/deps/priority-8025e554eff69ebc)\n\nrunning 5 tests\ntest reject_unsupported ... ok\ntest no_findings_not_safe ... ok\ntest queue ... ok\ntest deterministic_permutations ... ok\ntest rejection ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n   Doc-tests sbom_risk_prioritizer\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\nOBSERVED peak_RSS_KiB=77476 elapsed_seconds=0.19\n"
+      },
+      {
+        "command": "python3 -m unittest discover -s tests -v",
+        "exit_status": 0,
+        "seconds": 0.097,
+        "classification": "OBSERVED",
+        "output": "test_expected_queue (test_report.ReportTests.test_expected_queue) ... ok\ntest_html_escape (test_report.ReportTests.test_html_escape) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\nOBSERVED peak_RSS_KiB=15984 elapsed_seconds=0.09\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-10-12T11:13:35.966434+00:00",
+    "checks": [
+      {
+        "command": "python3 tools/dependency_audit.py .",
+        "exit_status": 0,
+        "seconds": 0.794,
+        "classification": "OBSERVED",
+        "output": "OBSERVED 12 queries 0 advisories\nOBSERVED peak_RSS_KiB=22968 elapsed_seconds=0.79\n"
+      }
+    ]
+  }
+]

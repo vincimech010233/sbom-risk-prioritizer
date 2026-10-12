@@ -1,0 +1,10 @@
+{
+  "project": "sbom-risk-prioritizer",
+  "status": "VALIDATED_LOCAL",
+  "classification": "VERIFIED",
+  "limitation": "Synthetic exact-reference triage; heuristic score without calibration, freshness or vulnerability discovery.",
+  "review": "docs/REVIEW.md",
+  "tests": "results/validation.json",
+  "publication_ready_for_manual_review": true,
+  "remote_ci": "NOT_VERIFIED"
+}

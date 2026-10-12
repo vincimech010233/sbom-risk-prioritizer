@@ -1,0 +1,39 @@
+{
+  "classification": "OBSERVED",
+  "checks": [
+    {
+      "case": "baseline",
+      "exit_status": 0,
+      "stderr": "",
+      "report_exists": true
+    },
+    {
+      "case": "reversed",
+      "exit_status": 0,
+      "stderr": "",
+      "report_exists": true
+    },
+    {
+      "case": "non-synthetic",
+      "exit_status": 2,
+      "stderr": "restricted CycloneDX 1.5 / synthetic findings v1 profile required\n",
+      "report_exists": false
+    },
+    {
+      "case": "bad-provenance",
+      "exit_status": 2,
+      "stderr": "nonempty classified evidence provenance required\n",
+      "report_exists": false
+    },
+    {
+      "case": "unknown-field",
+      "exit_status": 2,
+      "stderr": "unknown field `automatic_suppression`, expected one of `id`, `component_ref`, `severity`, `exploitability`, `exposure`, `fixed_version`, `evidence` at line 1 column 375\n",
+      "report_exists": false
+    },
+    {
+      "case": "renderer-policy",
+      "literal_html_in_markdown": false
+    }
+  ]
+}
